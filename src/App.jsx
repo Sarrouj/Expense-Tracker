@@ -1,13 +1,14 @@
-import './App.css';
-import { AddTransaction } from './Components/AddTransaction';
-import Balance from './Components/Balance';
-import { Header } from './Components/Header';
-import IncomeExpenses from './Components/IncomeExpenses';
-import TransactionList from './Components/TransactionList';
+import Balance from "./Components/balance"
+import Header from "./Components/Header"
+import IncomeExpenses from "./Components/IncomeExpenses"
+import TransactionList from "./Components/transactionList"
+import AddTransaction from "./Components/addTransaction"
+import { GlobalProvider } from "./Context/GlobalState"
+import './CSS/App.css'
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header/>
       <div className="container">
         <Balance/>
@@ -15,8 +16,8 @@ function App() {
         <TransactionList/>
         <AddTransaction/>
       </div>
-    </div>
+    </GlobalProvider>
   )
 }
 
-export default App;
+export default App
